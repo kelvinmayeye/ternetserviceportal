@@ -35,6 +35,19 @@ Route::get('contacts',[FrontEndController::class,'getContactPage']);
 Route::get('login',[FrontEndController::class,'getLogin']);
 Route::post('login',[FrontEndController::class,'login'])->name('login');
 
+Route::get('send-mail', function () {
+
+    $details = [
+        'title' => 'Mail from ItSolutionStuff.com',
+        'body' => 'This is for testing email using smtp'
+    ];
+
+    \Mail::to('kevmayeye97@gmail.com')->send(new \App\Mail\MyTestMail($details));
+
+    dd("Email is Sent.");
+
+});
+
 
 //cant access this links without login
 Route::middleware("auth")->group(function(){
