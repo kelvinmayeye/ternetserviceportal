@@ -1,0 +1,98 @@
+
+  /*------------------Monika Sytles------------------*/
+
+  html *{
+    font-family: 'Ubuntu', sans-serif;
+}
+.bg-dark{
+    background-color: gray !important;
+    color: white;
+    padding-bottom: 30px;
+}
+.background-image{
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 300px;
+    box-shadow: grey;
+}
+.background-imagee{
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 600px;
+    box-shadow: grey;
+    width: 100%;
+}
+
+.ml{
+    text-align: center;
+}
+.top{
+    padding-left: 20px;
+    color: gray;
+}
+.mr{
+    text-align: center;
+    color: gray;
+    font-size: 40px;
+}
+.card{
+    color: gray;
+}
+.nav-link{
+    color:black;
+}
+ul{
+    list-style-type: none;
+}
+.one{
+    font-size: 25px;
+}
+ul li a{
+    color: black;
+    font-size: 30px;
+}
+ul li a:hover{
+    text-decoration: none;
+}
+input[type=text]{
+    padding: 30px;
+}
+input[type=tel]{
+    padding: 30px;
+}
+input[type=email]{
+    padding: 30px;
+}
+input[type=address]{
+    padding: 30px;
+}
+input[type=password]{
+    padding: 30px;
+}
+.btn{
+    padding: 15px;
+}
+.mt-100{
+    margin-top: 100px;
+}
+.mt-120{
+    margin-top: 120px;
+}
+.ret{
+color: gray;
+}
+
+ /* Hero image */
+ #hero-div {
+    position: relative;
+    text-align: center;
+    color: white;
+  }
+  #centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 50px;
+    font-family: 'Ubuntu', sans-serif;
+    transform: translate(-50%, -50%);
+  } 
