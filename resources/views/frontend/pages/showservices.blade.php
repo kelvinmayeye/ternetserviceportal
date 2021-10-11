@@ -16,7 +16,7 @@
 <div class="container">
 <div class="row mt-5">
         <div class="col-md-6">
-          <h2>{{$service->department->name}}</h2>
+          <h2><a href="#">{{$service->department->name}}</a></h2>
         </div>
         <div class="col-md-6 float-right">
           <h2 class="float-right">{{$service->status->name}}</h2>

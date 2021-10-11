@@ -30,6 +30,7 @@ Route::get('/',[FrontEndController::class,'getHomePage']);
 
 Route::get('service',[FrontEndController::class,'getServicesPage'])->name('servicehome');
 Route::get('showservices/{id}/showservices',[FrontEndController::class,'showServices']);
+//Route::get('showdepartment/{id}/showdepartment}',[FrontEndControlle::class,'showdepartment'])->name('shodepartment');
 Route::get('contacts',[FrontEndController::class,'getContactPage']);
 
 Route::get('login',[FrontEndController::class,'getLogin']);

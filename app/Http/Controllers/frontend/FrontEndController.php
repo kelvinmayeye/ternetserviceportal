@@ -51,11 +51,19 @@ class FrontEndController extends Controller
 
     public function showServices($id){
         $service=Service::find($id);
-        //$relatedservices=Service::take(3)->get();
-        $relatedservices=Service::simplePaginate(3);
+        $relatedservices=Service::take(3)->get();
+        //$relatedservices=Service::simplePaginate(3);
         return view('frontend.pages.showservices',compact("service","relatedservices"));
     }
 
+    public function showdepartment($id){
+        //$service=Service::find($id);
+        $serv = "jjfejjfewjfowejfioef";
+       // return view('frontend.pages.showdepartment',compact("service"));
+       return redirect("/");
+    }
+
+    
     public function logout(Request $request){
         auth()->logout();
         $request->session()->invalidate();
