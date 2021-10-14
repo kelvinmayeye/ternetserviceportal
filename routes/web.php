@@ -32,6 +32,8 @@ Route::get('service',[FrontEndController::class,'getServicesPage'])->name('servi
 Route::get('showservices/{id}/showservices',[FrontEndController::class,'showServices']);
 //Route::get('showdepartment/{id}/showdepartment}',[FrontEndControlle::class,'showdepartment'])->name('shodepartment');
 Route::get('contacts',[FrontEndController::class,'getContactPage']);
+//Route::get('showdepartment',[FrontEndController::class,'showdepartment']);
+Route::get('showdepartment/{id}',[FrontEndController::class,'showdepartment']);
 
 Route::get('login',[FrontEndController::class,'getLogin']);
 Route::post('login',[FrontEndController::class,'login'])->name('login');
@@ -48,6 +50,7 @@ Route::get('send-mail', function () {
     dd("Email is Sent Mr Kelvin.");
 
 });
+
 
 
 //cant access this links without login

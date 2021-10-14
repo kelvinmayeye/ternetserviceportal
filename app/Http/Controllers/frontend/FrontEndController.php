@@ -57,10 +57,9 @@ class FrontEndController extends Controller
     }
 
     public function showdepartment($id){
-        //$service=Service::find($id);
-        $serv = "jjfejjfewjfowejfioef";
+        $department=Department::find($id);
        // return view('frontend.pages.showdepartment',compact("service"));
-       return redirect("/");
+        return view('frontend.pages.showdepartment',compact("department"));
     }
 
     
