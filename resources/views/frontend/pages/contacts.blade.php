@@ -12,7 +12,7 @@
         <div class="row mt-5">
           <div class="col-md-2"></div>
           <div class="col-md-8">
-            <form>
+            <form action="" method="POST">
               <h3>For more information, Contact us through this form</h3>
               <div class="row" height="50">
               </div>
@@ -21,7 +21,7 @@
                   <input type="text" name="name" class="form-control form-control-lg" placeholder="Name">
                 </div>
                 <div class="col">
-                  <input type="text" class="form-control form-control-lg" placeholder="Email">
+                  <input type="text" name="email" class="form-control form-control-lg" placeholder="Email">
                 </div>
               </div>
               <div class="form-group">

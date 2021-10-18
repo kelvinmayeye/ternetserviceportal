@@ -6,7 +6,9 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\Service;
 use App\Models\Department;
+use App\Models\NewsSubscriber;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Session;
 
 class FrontEndController extends Controller
 {
@@ -60,6 +62,18 @@ class FrontEndController extends Controller
         $department=Department::find($id);
        // return view('frontend.pages.showdepartment',compact("service"));
         return view('frontend.pages.showdepartment',compact("department"));
+    }
+
+    public function storeSubscriber(Request $request){
+        $this->validate($request,[
+            "email"=>"required|email"
+        ]);
+
+        $newssubscribers = new NewsSubscriber();
+        $newssubscribers->email=$request->email;
+        $newssubscribers->save();
+        Session::flash("success","Thank you we will send you notifications");
+        return back();
     }
 
     
