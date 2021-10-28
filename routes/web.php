@@ -19,6 +19,7 @@ use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\StatusController;
+use App\Http\Controllers\ContactController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -83,5 +84,10 @@ Route::post('statuses',[StatusController::class,'store']);
 Route::get('statuses/{id}/edit',[StatusController::class,'edit']);
 Route::put('statuses/update/{id}',[StatusController::class,'update'])->name("statuses.update");
 Route::get('statuses/{id}',[StatusController::class,'show']);
+
+Route::get('contacts',[ContactController::class,'index']);
+Route::get('delete/{id}',[ContactController::class,'deletecontact']);
+
+
 Route::post('logout',[FrontEndController::class,'logout'])->name('logout');
 });

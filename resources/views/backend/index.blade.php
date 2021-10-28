@@ -7,6 +7,8 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <!--Fontawsome-->
+    <link rel="stylesheet" href="{{asset('font-awesome/css/font-awesome.min.css')}}">
 
     <title>Ternet Service Portal</title>
   </head>
@@ -18,7 +20,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
       
-      <a class="navbar-brand" href="{{url('services')}}">Home</a>
+      <a class="navbar-brand" href="{{url('home')}}">Home</a>
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
       @auth
         <li class="nav-item">
@@ -29,6 +31,12 @@
         </li>
         <li class="nav-item">
           <a href="{{url('statuses')}}" class="nav-link">Statuses</a>
+        </li>
+        <li class="nav-item">
+          <a href="{{url('contacts')}}" class="nav-link">Contacts</a>
+        </li>
+        <li class="nav-item">
+          <a href="" class="nav-link">Subscribers</a>
         </li>
         
         @endauth
