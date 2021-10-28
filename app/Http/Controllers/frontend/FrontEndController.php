@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\Service;
 use App\Models\Department;
+use App\Models\Contact;
 use App\Models\NewsSubscriber;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Session;
@@ -73,6 +74,21 @@ class FrontEndController extends Controller
         $newssubscribers->email=$request->email;
         $newssubscribers->save();
         Session::flash("success","Thank you we will send you notifications");
+        return back();
+    }
+
+    public function storeContacts(Request $request){
+        $this->validate($request,[
+            "email"=>"email"
+        ]);
+        
+        $contacts = new Contact();
+        $contacts->name=$request->name;
+        $contacts->email=$request->email;
+        $contacts->subject=$request->subject;
+        $contacts->message=$request->message;
+        $contacts->save();
+        Session::flash("success","Thank you for contact us");
         return back();
     }
 

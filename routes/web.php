@@ -34,6 +34,7 @@ Route::get('showservices/{id}/showservices',[FrontEndController::class,'showServ
 Route::get('showdepartment/{id}',[FrontEndController::class,'showdepartment']);
 
 Route::get('contacts',[FrontEndController::class,'getContactPage']);
+Route::post('contacts',[FrontEndController::class,'storeContacts']);
 
 Route::get('login',[FrontEndController::class,'getLogin']);
 Route::post('login',[FrontEndController::class,'login'])->name('login');

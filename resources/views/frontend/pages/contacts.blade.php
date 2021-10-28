@@ -12,7 +12,16 @@
         <div class="row mt-5">
           <div class="col-md-2"></div>
           <div class="col-md-8">
-            <form action="" method="POST">
+          @if(Session::has("success"))
+      <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Received</strong> {{Session::get("success")}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      @endif
+            <form action="{{url('contacts')}}" method="POST">
+            @csrf
               <h3>For more information, Contact us through this form</h3>
               <div class="row" height="50">
               </div>
@@ -30,7 +39,7 @@
               </div>
               <div class="form-group">
                 <label for="message"></label>
-                <textarea class="form-control form-control-lg" name="messege" placeholder="Message"  id="message" rows="6"></textarea>
+                <textarea class="form-control form-control-lg" name="message" placeholder="Message"  id="message" rows="6"></textarea>
               </div>
               <button type="submit" class="btn btn-primary">SEND MESSAGE</button>
             </form>
