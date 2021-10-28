@@ -13,9 +13,6 @@ class ContactController extends Controller
     }
 
     public function deletecontact($id){
-        if($id==null){
-            $id=0;
-        }
         $res=Contact::find($id)->delete();
         return back();
     }

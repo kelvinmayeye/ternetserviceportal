@@ -36,7 +36,7 @@
           <a href="{{url('contacts')}}" class="nav-link">Contacts</a>
         </li>
         <li class="nav-item">
-          <a href="" class="nav-link">Subscribers</a>
+          <a href="{{url('subscribers')}}" class="nav-link">Subscribers</a>
         </li>
         
         @endauth

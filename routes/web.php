@@ -20,6 +20,7 @@ use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\StatusController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\SubscriberController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -87,6 +88,9 @@ Route::get('statuses/{id}',[StatusController::class,'show']);
 
 Route::get('contacts',[ContactController::class,'index']);
 Route::get('delete/{id}',[ContactController::class,'deletecontact']);
+
+Route::get('subscribers',[SubscriberController::class,'index']);
+Route::get('subdelete/{id}',[SubscriberController::class,'deletecontact']);
 
 
 Route::post('logout',[FrontEndController::class,'logout'])->name('logout');
