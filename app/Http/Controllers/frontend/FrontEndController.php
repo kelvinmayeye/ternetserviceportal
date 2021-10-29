@@ -7,9 +7,12 @@ use Illuminate\Http\Request;
 use App\Models\Service;
 use App\Models\Department;
 use App\Models\Contact;
+use Notification;
 use App\Models\NewsSubscriber;
+use App\Notifications\NewPosts;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Session;
+
 
 class FrontEndController extends Controller
 {

@@ -21,6 +21,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\StatusController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\SubscriberController;
+use App\Http\Controllers\NotificationController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -53,6 +54,8 @@ Route::get('send-mail', function () {
     dd("Email is Sent Mr Kelvin.");
 
 });
+
+Route::get('send',[NotificationController::class,'sendNotification']);
 
 
 
