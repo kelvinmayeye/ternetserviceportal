@@ -8,12 +8,13 @@ use App\Notifications\NewPosts;
 
 use Illuminate\Support\Facades\Notifications;
 
+
 class NotificationController extends Controller
 {
     public function sendNotification(){
 
-        $newssubscriber = NewsSubscriber::first();
-
+        $newssubscriber = NewsSubscriber::all();
+        //return $newssubscriber->first();
         $details = [
             'body' => 'You Received a new Notification',
             'action'=>'Click Here To View Post',
