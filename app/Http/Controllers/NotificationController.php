@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\NewsSubscriber;
 use App\Notifications\NewPosts;
 
-use Illuminate\Support\Facades\Notifications;
+use Illuminate\Support\Facades\Notification;
 
 
 class NotificationController extends Controller
@@ -22,8 +22,8 @@ class NotificationController extends Controller
             'Thankyou'=>'Thank you have a nice day'
         ];
 
-        $newssubscriber->notify(new NewPosts($details));
-        //Notification::send($newssubscriber, new NewPosts($details));
+       // $newssubscriber->notify(new NewPosts($details));
+    Notification::send($newssubscriber, new NewPosts($details));
     dd('Done tayari');
     }
 }
