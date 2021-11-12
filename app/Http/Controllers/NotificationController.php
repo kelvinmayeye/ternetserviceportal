@@ -24,6 +24,6 @@ class NotificationController extends Controller
 
        // $newssubscriber->notify(new NewPosts($details));
     Notification::send($newssubscriber, new NewPosts($details));
-    dd('Done tayari');
+    return redirect("servicescreate");
     }
 }
