@@ -19,6 +19,9 @@ use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\StatusController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\SubscriberController;
+use App\Http\Controllers\NotificationController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -27,13 +30,33 @@ use App\Http\Controllers\StatusController;
 
 
 Route::get('/',[FrontEndController::class,'getHomePage']);
+Route::post('storenewsletteremail',[FrontEndController::class,'storeSubscriber']);
 
 Route::get('service',[FrontEndController::class,'getServicesPage'])->name('servicehome');
 Route::get('showservices/{id}/showservices',[FrontEndController::class,'showServices']);
+Route::get('showdepartment/{id}',[FrontEndController::class,'showdepartment']);
+
 Route::get('contacts',[FrontEndController::class,'getContactPage']);
+Route::post('contacts',[FrontEndController::class,'storeContacts']);
 
 Route::get('login',[FrontEndController::class,'getLogin']);
 Route::post('login',[FrontEndController::class,'login'])->name('login');
+
+Route::get('send-mail', function () {
+
+    $details = [
+        'title' => 'Mail from KelvinTheFibre',
+        'body' => 'This is for testing email using smtp and kelzbiggie@gmail.com'
+    ];
+
+    \Mail::to('kevmayeye97@gmail.com')->send(new \App\Mail\MyTestMail($details));
+
+    dd("Email is Sent Mr Kelvin.");
+
+});
+
+Route::get('send',[NotificationController::class,'sendNotification']);
+
 
 
 //cant access this links without login
@@ -65,5 +88,13 @@ Route::post('statuses',[StatusController::class,'store']);
 Route::get('statuses/{id}/edit',[StatusController::class,'edit']);
 Route::put('statuses/update/{id}',[StatusController::class,'update'])->name("statuses.update");
 Route::get('statuses/{id}',[StatusController::class,'show']);
+
+Route::get('contacts',[ContactController::class,'index']);
+Route::get('delete/{id}',[ContactController::class,'deletecontact']);
+
+Route::get('subscribers',[SubscriberController::class,'index']);
+Route::get('subdelete/{id}',[SubscriberController::class,'deletecontact']);
+
+
 Route::post('logout',[FrontEndController::class,'logout'])->name('logout');
 });

@@ -5,7 +5,7 @@
     <div class="card">
    
         <div class="card-header">
-            <h2>{{$status->name}} Status</h2>
+            <h2>{{$status->name}} Status Services</h2>
             
         </div>
          <div class="card-body">

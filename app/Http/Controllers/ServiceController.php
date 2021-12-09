@@ -50,8 +50,8 @@ class ServiceController extends Controller
         }
         $services->save();
         
-        Session::flash("success","Successfully Saved");
-        return redirect("servicescreate");
+        //Session::flash("success","Successfully Saved");
+        return redirect("send");
     }
     public function edit($id){
         $service=Service::find($id);
@@ -97,7 +97,7 @@ class ServiceController extends Controller
         $service->save();
         //return $service;
         
-        Session::flash("success","Successfully Updated");
+        //Session::flash("success","Successfully Updated");
         return redirect("services");
     }
 }

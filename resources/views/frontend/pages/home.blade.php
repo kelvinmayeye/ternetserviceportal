@@ -23,6 +23,16 @@
                 </a>
           </div>
       </div>
+
+      @if(Session::has("success"))
+      <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Received</strong> {{Session::get("success")}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      @endif
+
      <!-- CLOSE SLIDE SHOW -->
       <h2 class="text-center mt-5">SERVICES</h2>
         <h2 class="text-center text-muted">Below are our services</h2>
@@ -41,14 +51,17 @@
                       <h1 class="display-3">SUBSCRIBE TO NEWSLETTER</h1>            
                               <div class="row">
                                 <div class="col-md-4"></div>
-                              <div class="col-md-4">  
+                              <div class="col-md-4">
+                                <form action="{{url('storenewsletteremail')}}" method="POST">
+                                @csrf
                                 <div class="row">
                                   <div class="col-md-8">
-                                    <input type="email 1" class="form-control form-control-lg" placeholder="Email">
+                                    <input type="email 1" class="form-control form-control-lg" placeholder="Email" name="email" required>
                                   </div>
                                   <div class="col-md-4">
                                     <button type="submit" style="font-size: 13px;" class="btn btn-danger float-left">JOIN</button>
                                   </div>
+                                  </form>
                                 </div>                        
                             </div>
                             <div class="col-md-4"></div>
