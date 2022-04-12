@@ -52,6 +52,7 @@ class FrontEndController extends Controller
         }
         
         session::flash("error","email or password is not valid");
+       // return $request->all();
         return back();
     }
 
