@@ -11,16 +11,16 @@
          <table class="table table-bordered">
      <thead>
          <tr>
-             
+
              <th>Email</th>
-             
+
              <th>Action</th>
          </tr>
      </thead>
      <tbody>
      @foreach($newssubscribers as $newssubscribers)
          <tr>
-             
+
              <td>{{$newssubscribers->email}}</td>
              <td>
                 <div class="btn-group">
@@ -33,7 +33,7 @@
          @endforeach
      </tbody>
     </table>
-         
+
 </div>
 
 </div>
@@ -50,11 +50,11 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        Are you sure 
+        Are you sure
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <a href = 'subdelete/{{$newssubscribers->id}}'><button type="button" class="btn btn-success"><i class="fa fa-trash" aria-hidden="true" style="font-size: 20px;"></i></button></a>
+        <a href = ''><button type="button" class="btn btn-danger">Yes</button></a>
       </div>
     </div>
   </div>

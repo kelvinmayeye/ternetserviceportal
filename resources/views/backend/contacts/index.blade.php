@@ -20,7 +20,7 @@
          </tr>
      </thead>
      <tbody>
-     @foreach($contacts as $contacts)
+        @foreach($contacts as $contacts)
          <tr>
              <td>{{$contacts->name}}</td>
              <td>{{$contacts->email}}</td>
@@ -38,7 +38,7 @@
          @endforeach
      </tbody>
     </table>
-         
+
 </div>
 
 </div>
@@ -55,11 +55,11 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        Are you sure 
+        Are you sure
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <a href = 'delete/{{$contacts->id}}'><button type="button" class="btn btn-success"><i class="fa fa-trash" aria-hidden="true" style="font-size: 20px;"></i></button></a>
+        <a href = ''><button type="button" class="btn btn-danger">Yes</button></a>
       </div>
     </div>
   </div>

@@ -89,7 +89,7 @@ Route::get('statuses/{id}/edit',[StatusController::class,'edit']);
 Route::put('statuses/update/{id}',[StatusController::class,'update'])->name("statuses.update");
 Route::get('statuses/{id}',[StatusController::class,'show']);
 
-Route::get('contacts',[ContactController::class,'index']);
+Route::get('cont',[ContactController::class,'index']);
 Route::get('delete/{id}',[ContactController::class,'deletecontact']);
 
 Route::get('subscribers',[SubscriberController::class,'index']);
