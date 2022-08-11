@@ -35,7 +35,7 @@
 
      <!-- CLOSE SLIDE SHOW -->
       <h2 class="text-center mt-5">SERVICES</h2>
-        <h2 class="text-center text-muted">Below are our services</h2>
+        <h2 class="text-center text-muted">Below are our services at TERNET</h2>
 
         <div class="container">
             <div class="row mt-5">
