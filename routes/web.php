@@ -49,7 +49,7 @@ Route::get('send-mail', function () {
         'body' => 'This is for testing email using smtp and kelzbiggie@gmail.com'
     ];
 
-    \Mail::to('kevmayeye97@gmail.com')->send(new \App\Mail\MyTestMail($details));
+    //\Mail::to('kevmayeye97@gmail.com')->send(new \App\Mail\MyTestMail($details));
 
     dd("Email is Sent Mr Kelvin.");
 
@@ -67,6 +67,7 @@ Route::get('servicescreate',[ServiceController::class,'create']);
 Route::post('services',[ServiceController::class,'store'])->name("services.store");
 Route::get('services/{id}/edit',[ServiceController::class,'edit']);
 Route::put('services/update/{id}',[ServiceController::class,'update'])->name("services.update");
+Route::get('services/{id}/delete',[ServiceController::class,'destroy']);
 
 Route::get('departments',[DepartmentController::class,'index']);
 Route::post('departments',[DepartmentController::class,'store']);

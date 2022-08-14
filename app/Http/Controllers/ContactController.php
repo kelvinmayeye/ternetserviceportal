@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Contact;
-
+use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 
 class ContactController extends Controller
@@ -13,7 +13,9 @@ class ContactController extends Controller
     }
 
     public function deletecontact($id){
-        $res=Contact::find($id)->delete();
+        $contact=Contact::find($id);
+        $contact->delete();
+        Session::flash("succuess","Contact Deleted");
         return back();
     }
 }

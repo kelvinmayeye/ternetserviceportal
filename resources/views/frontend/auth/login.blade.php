@@ -1,7 +1,7 @@
 @extends('frontend.index')
 @section('content')
  <div id="hero-div">
-  		<img src="{{asset('storage/services/picha.jpg')}}" height="10%" alt="Snow" style="width:100%;">
+  		<img src="{{asset('storage/services/picha.jpg')}}" height="480px" alt="Snow" style="width:100%;">
   		<div id="centered">Login</div>
 	</div>
 </div>
