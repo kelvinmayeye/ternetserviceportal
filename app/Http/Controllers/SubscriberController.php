@@ -13,7 +13,7 @@ class SubscriberController extends Controller
     }
 
     public function deletecontact($id){
-        $res=NewsSubscriber::find($id)->delete();
+        NewsSubscriber::find($id)->delete();
         return back();
     }
 }

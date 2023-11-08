@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Service;
 use App\Models\Department;
 use App\Models\Status;
-use App\Models\Session;
+use Illuminate\Support\Facades\Session;
 
 class ServiceController extends Controller
 {
@@ -50,7 +50,7 @@ class ServiceController extends Controller
         }
         $services->save();
         
-        //Session::flash("success","Successfully Saved");
+        Session::flash("success","Successfully Saved");
         return redirect("send");
     }
     public function edit($id){
@@ -99,5 +99,13 @@ class ServiceController extends Controller
         
         //Session::flash("success","Successfully Updated");
         return redirect("services");
+    }
+
+    public function destroy($id){
+        $service=Service::find($id);
+        $service->delete();
+        Session::flash("success","Deleted Successfully");
+        return back();
+        
     }
 }

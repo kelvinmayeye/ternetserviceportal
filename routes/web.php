@@ -49,7 +49,11 @@ Route::get('send-mail', function () {
         'body' => 'This is for testing email using smtp and kelzbiggie@gmail.com'
     ];
 
+<<<<<<< HEAD
     Mail::to('kevmayeye97@gmail.com')->send(new \App\Mail\MyTestMail($details));
+=======
+    //\Mail::to('kevmayeye97@gmail.com')->send(new \App\Mail\MyTestMail($details));
+>>>>>>> master
 
     dd("Email is Sent Mr Kelvin.");
 
@@ -67,6 +71,7 @@ Route::get('servicescreate',[ServiceController::class,'create']);
 Route::post('services',[ServiceController::class,'store'])->name("services.store");
 Route::get('services/{id}/edit',[ServiceController::class,'edit']);
 Route::put('services/update/{id}',[ServiceController::class,'update'])->name("services.update");
+Route::get('services/{id}/delete',[ServiceController::class,'destroy']);
 
 Route::get('departments',[DepartmentController::class,'index']);
 Route::post('departments',[DepartmentController::class,'store']);
@@ -89,7 +94,7 @@ Route::get('statuses/{id}/edit',[StatusController::class,'edit']);
 Route::put('statuses/update/{id}',[StatusController::class,'update'])->name("statuses.update");
 Route::get('statuses/{id}',[StatusController::class,'show']);
 
-Route::get('contacts',[ContactController::class,'index']);
+Route::get('cont',[ContactController::class,'index']);
 Route::get('delete/{id}',[ContactController::class,'deletecontact']);
 
 Route::get('subscribers',[SubscriberController::class,'index']);

@@ -19,7 +19,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-      
+
       <a class="navbar-brand" href="{{url('home')}}">Home</a>
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
       @auth
@@ -33,12 +33,12 @@
           <a href="{{url('statuses')}}" class="nav-link">Statuses</a>
         </li>
         <li class="nav-item">
-          <a href="{{url('contacts')}}" class="nav-link">Contacts</a>
+          <a href="{{url('cont')}}" class="nav-link">Contacts</a>
         </li>
         <li class="nav-item">
           <a href="{{url('subscribers')}}" class="nav-link">Subscribers</a>
         </li>
-        
+
         @endauth
         <li class="nav-item">
           <a href="{{url('services')}}" class="nav-link">Services</a>
@@ -57,8 +57,8 @@
         </li>
         @endauth
       </ul>
-      
-      
+
+
     </div>
   </div>
 </nav>
