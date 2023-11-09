@@ -14,7 +14,13 @@
                 </li>
               </ul>
               <ul class="nav navbar-nav navbar-right">
+                @guest
                 <li><a class="nav-link" href="{{url('login')}}">Login</a></li>
+                @endguest
+                @auth
+                <li><a class="nav-link" href="{{url('services')}}">Dashboard</a></li>
+                @endauth
+                
               </ul>
             </div>
           </nav>
