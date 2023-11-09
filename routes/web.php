@@ -76,6 +76,7 @@ Route::get('departments/create',[DepartmentController::class,'create']);
 Route::get('departments/{id}/edit',[DepartmentController::class,'edit']);
 Route::put('departments/update/{id}',[DepartmentController::class,'update'])->name("departments.update");//named route
 Route::get('departments/{id}',[DepartmentController::class,'show']);
+Route::get('departments/{id}/delete',[DepartmentController::class,'delete']);
 
 Route::get('users',[UserController::class,'index']);
 Route::get('users/create',[UserController::class,'create']);

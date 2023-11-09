@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Department;
 use Illuminate\Http\Request;
+use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\Session;
 
 class DepartmentController extends Controller
@@ -63,5 +64,22 @@ class DepartmentController extends Controller
         
         Session::flash("success","Successfully Updated");
         return redirect("departments");
+    }
+
+    public function delete($id){
+        $department = Department::find($id);
+        if(!$department){
+            Session::flash("error","Department not found"); 
+        }
+        try {
+            $department->delete();
+            Session::flash("success","Department deleted successfully");
+            return back();
+        } catch (QueryException $exception) {
+            Session::flash('error', 'This Department cant be deleted');
+            return back();
+        }
+        
+        return back();
     }
 }
