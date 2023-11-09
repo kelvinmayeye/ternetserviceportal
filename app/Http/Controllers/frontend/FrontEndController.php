@@ -1,16 +1,16 @@
 <?php
 
 namespace App\Http\Controllers\frontend;
-use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Http\Request;
+use Notification;
+use App\Models\Contact;
 use App\Models\Service;
 use App\Models\Department;
-use App\Models\Contact;
-use Notification;
+use Illuminate\Support\Str;
+use Illuminate\Http\Request;
 use App\Models\NewsSubscriber;
 use App\Notifications\NewPosts;
-use Illuminate\Support\Str;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 
 
@@ -51,7 +51,7 @@ class FrontEndController extends Controller
             return redirect()->intended('services');
         }
         
-        session::flash("error","email or password is not valid");
+        session::flash("error","wrong email or password");
        // return $request->all();
         return back();
     }
@@ -83,7 +83,7 @@ class FrontEndController extends Controller
 
     public function storeContacts(Request $request){
         $this->validate($request,[
-            "email"=>"email"
+            "email"=>"email|required"
         ]);
         
         $contacts = new Contact();

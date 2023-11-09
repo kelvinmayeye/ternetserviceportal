@@ -20,7 +20,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
 
-      <a class="navbar-brand" href="{{url('home')}}">Home</a>
+      <a class="navbar-brand" href="{{url('/')}}">Home</a>
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
       @auth
         <li class="nav-item">

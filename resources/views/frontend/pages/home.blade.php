@@ -48,7 +48,7 @@
         <!-- SUBSCRIBE -->
         <div class="row">
             <div class="col-md-12">
-                <div class="jumbotron text-center mt-5 text-white" style="background-image: url(storage/services/prj.jpg);">
+                <div class="jumbotron text-center mt-5 text-white" style="background-image: url(storage/services/images.jpeg); background-repeat: no-repeat;  background-size: 1200px 400px;">
                     <h1 class="display-3">SUBSCRIBE TO NEWSLETTER</h1>
                     <div class="row">
                         <div class="col-md-4"></div>
@@ -62,12 +62,11 @@
                                     </div>
                                     <div class="col-md-4">
                                         <button type="submit" style="font-size: 13px;"
-                                            class="btn btn-danger float-left">JOIN</button>
+                                            class="btn btn-danger btn-sm float-left">JOIN</button>
                                     </div>
                             </form>
                         </div>
                     </div>
-                    <div class="col-md-4"></div>
                 </div>
             </div>
         </div>

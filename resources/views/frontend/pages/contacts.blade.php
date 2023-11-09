@@ -2,7 +2,7 @@
 @section('content')
     <div class="row">
         <div class="col-md-12">
-            <div class="jumbotron text-center text-white" style="background-image: url(storage/services/picha.jpg);">
+            <div class="jumbotron text-center text-white" style="background-image: url(storage/services/1699513408.jpg);">
                 <a href="">
                     <h1 class="display-3 mt-120 text-white"><b>Contact Us</b></h1>
                 </a>
@@ -31,20 +31,20 @@
                 </div>
                 <div class="row">
                     <div class="col">
-                        <input type="text" name="name" class="form-control form-control-lg" placeholder="Name">
+                        <input type="text" name="name" class="form-control form-control-lg" placeholder="Name" required>
                     </div>
                     <div class="col">
-                        <input type="text" name="email" class="form-control form-control-lg" placeholder="Email">
+                        <input type="email" name="email" class="form-control form-control-lg" placeholder="Email" required>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="inputAddress"></label>
                     <input type="text" name="subject" class="form-control form-control-lg" id="inputAddress"
-                        placeholder="Subject">
+                        placeholder="Subject" required>
                 </div>
                 <div class="form-group">
                     <label for="message"></label>
-                    <textarea class="form-control form-control-lg" name="message" placeholder="Message" id="message" rows="6"></textarea>
+                    <textarea class="form-control form-control-lg" name="message" placeholder="Message" id="message" rows="6" required></textarea>
                 </div>
                 <button type="submit" class="btn btn-primary">SEND MESSAGE</button>
             </form>
