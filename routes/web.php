@@ -103,3 +103,6 @@ Route::get('subdelete/{id}',[SubscriberController::class,'deletecontact']);
 
 Route::post('logout',[FrontEndController::class,'logout'])->name('logout');
 });
+
+
+require __DIR__.'/backend/roles_permission.php';
