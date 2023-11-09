@@ -92,6 +92,7 @@ Route::post('statuses',[StatusController::class,'store']);
 Route::get('statuses/{id}/edit',[StatusController::class,'edit']);
 Route::put('statuses/update/{id}',[StatusController::class,'update'])->name("statuses.update");
 Route::get('statuses/{id}',[StatusController::class,'show']);
+Route::get('statuses/{id}/delete',[StatusController::class,'delete']);
 
 Route::get('cont',[ContactController::class,'index']);
 Route::get('delete/{id}',[ContactController::class,'deletecontact']);
