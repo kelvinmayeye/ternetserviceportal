@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Session;
 class UserController extends Controller
 {
     public function index(){
-        $users=User::latest()->get();
+        $users=User::where('id',"!=",auth()->user()->id)->get();
         return view('backend.users.index',compact('users'));
     } 
 
