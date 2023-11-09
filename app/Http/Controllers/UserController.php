@@ -75,4 +75,20 @@ class UserController extends Controller
         Session::flash("success","Successfully Updated");
         return redirect("users");
     }
+
+    public function delete($id){
+        $user = User::find($id);
+        if(!$user){
+            Session::flash("error","User not found"); 
+        }
+        try {
+            $user->delete();
+            Session::flash("success","User deleted successfully");
+            return back();
+        } catch (QueryException $exception) {
+            Session::flash('error', 'This User cant be deleted');
+            return back();
+        }
+        return back();
+    }
 }

@@ -84,6 +84,7 @@ Route::post('users',[UserController::class,'store']);
 Route::get('users/{id}/edit',[UserController::class,'edit']);
 Route::put('users/update/{id}',[UserController::class,'update'])->name("users.update");
 Route::get('users/{id}',[UserController::class,'show']);
+Route::get('users/{id}/delete',[UserController::class,'delete']);
 
 Route::get('statuses',[StatusController::class,'index']);
 Route::get('statuses/create',[StatusController::class,'create']);

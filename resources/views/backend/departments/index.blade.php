@@ -35,8 +35,6 @@
                                                 <li>
                                                   <a class="dropdown-item"
                                                         href="{{ url('departments/' . $department->id . '/edit') }}">Edit</a>
-
-                                                    <!-- Button trigger modal -->
                                                     <a class="dropdown-item" data-bs-toggle="modal"
                                                         data-bs-target="#deleteDepartmentModal{{ $department->id }}">
                                                         Delete
