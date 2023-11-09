@@ -4,25 +4,23 @@
         <div class="col-md-8 offset-md-2">
             <div class="card">
                 <div class="card-header">
-                    <h2>Statuses</h2>
-                    <a href="{{ route('roles.create') }}" class="btn btn-primary">Add Role</a>
-
-                    <a href="{{ route('permissions.index') }}" class="btn btn-primary mx-5">Permission</a>
+                    <h2>Permissions</h2>
+                    <a href="{{ route('permissions.create') }}" class="btn btn-primary">Add Permission</a>
                 </div>
                 <div class="card-body">
                     <table class="table table-bordered">
                         <thead>
                             <tr>
-                                <th>Name</th>
                                 <th>Permission</th>
+                                <th>Roles</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
 
                         <tbody>
-                            @foreach ($roles as $role)
+                            @foreach ($permissions as $permission)
                                 <tr>
-                                    <td>{{ $role->name }}</td>
+                                    <td>{{ $permission->name }}</td>
                                     <td> </td>
                                     <td>
                                         <div class="btn-group">
@@ -31,12 +29,10 @@
                                                 Action</button>
                                             <ul class="dropdown-menu">
                                                 <li><a class="dropdown-item"
-                                                        href="{{ route('roles.show', $role->id) }}">Show</a></li>
-                                                <li><a class="dropdown-item"
-                                                        href="{{ route('roles.edit', $role->id) }}">Edit</a></li>
+                                                        href="{{ route('permissions.show', $permission->id) }}">Add role</a></li>
                                                 <li>
                                                     <a class="dropdown-item" data-bs-toggle="modal"
-                                                        data-bs-target="#deleteRoleModal{{ $role->id }}">
+                                                        data-bs-target="#deletePermissionModal{{ $permission->id }}">
                                                         Delete
                                                     </a>
                                                 </li>
@@ -44,7 +40,7 @@
                                         </div>
                                     </td>
                                 </tr>
-                                @include('backend.modals.delete_role')
+                                @include('backend.modals.delete_permission')
                             @endforeach
                         </tbody>
                     </table>
