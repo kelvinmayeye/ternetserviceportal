@@ -22,8 +22,7 @@ class ServiceFactory extends Factory
         $departmentId = Department::inRandomOrder()->value('id');
         return [
             'name' => $this->faker->randomElement(['Affordable Bandwidth','Identity Provider','Net Tools','Campus Connect']),
-            'image' => 'https://www.ternet.or.tz/front/default/logo.png',
-            'description' => $this->faker->text(100),
+            'description' => $this->faker->text(800),
             'status_id' => $statusId,
             'department_id' => $departmentId
         ];

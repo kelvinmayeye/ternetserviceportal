@@ -23,10 +23,6 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\SubscriberController;
 use App\Http\Controllers\NotificationController;
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
 
 
 Route::get('/',[FrontEndController::class,'getHomePage']);
@@ -59,9 +55,13 @@ Route::get('send-mail', function () {
 Route::get('send',[NotificationController::class,'sendNotification']);
 
 
+Route::middleware(['role:user',])->group(function () {
+    
+});
+
 
 //cant access this links without login
-Route::middleware("auth")->group(function(){
+Route::middleware('auth','role:admin')->group(function(){
 Route::get('services',[ServiceController::class,'index']);
 Route::get('servicesshow/{id}/show',[ServiceController::class,'show'])->name("service.show");
 Route::get('servicescreate',[ServiceController::class,'create']);

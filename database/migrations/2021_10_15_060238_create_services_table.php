@@ -18,7 +18,7 @@ class CreateServicesTable extends Migration
             $table->string('name')->unique();
             $table->foreignId('status_id')->constrained();
             $table->foreignId('department_id')->constrained();
-            $table->string('image');
+            $table->string('image')->nullable();
             $table->text('description');
             $table->timestamps();
         });
