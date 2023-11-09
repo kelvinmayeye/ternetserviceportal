@@ -20,12 +20,12 @@ class UserController extends Controller
     }
 
     public function show($id){
-        $users=User::find($id);
-        if(!$users){
+        $user=User::find($id);
+        if(!$user){
             Session::flash("error","User not found");
             return back();
         }
-        return view('backend.users.show',compact("users"));
+        return view('backend.users.show',compact("user"));
     }
 
     public function edit($id){
@@ -42,13 +42,14 @@ class UserController extends Controller
 
     public function store(Request $request){
         $this->validate($request,[
-            "name"=>"required|unique:users"
+            "name"=>"required|unique:users",
+            'department_id'=>"required"
         ]);
 
         $user = new User();
         $user->name=$request->name;
         $user->email=$request->email;
-        $user->password=bcrypt($request->email);
+        $user->password=bcrypt("password");
         $user->department_id=$request->department_id;
         $user->save();
         
