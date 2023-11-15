@@ -14,6 +14,7 @@
                                 <th>Name</th>
                                 <th>Email</th>
                                 <th>Department</th>
+                                <th>Role</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -24,6 +25,11 @@
                                     <td>{{ $user->name }}</td>
                                     <td>{{ $user->email }}</td>
                                     <td>{{ $user->department->name }}</td>
+                                    <td>
+                                        @foreach ($user->roles as $role)
+                                            {{ $role->name }}&nbsp;
+                                         @endforeach
+                                    </td>
                                     <td>
                                         <div class="btn-group">
                                             <button type="button" class="btn btn-danger dropdown-toggle"
@@ -36,7 +42,7 @@
                                                         href="{{ url('users/' . $user->id . '/edit') }}">Edit</a></li>
                                                 <li>
                                                     <a class="dropdown-item" data-bs-toggle="modal"
-                                                        data-bs-target="#deleteUserModal{{ $user->id}}">
+                                                        data-bs-target="#deleteUserModal{{ $user->id }}">
                                                         Delete
                                                     </a>
                                                 </li>

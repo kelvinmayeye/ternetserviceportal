@@ -25,11 +25,21 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-4">
+                            <div class="col-md-6">
+                                <label for="exampleFormControlInput1" class="form-label">Email:</label>
                                 <select class="form-select" aria-label="Default select example" name="department_id">
                                     <option selected disabled>Select Department</option>
                                     @foreach ($departments as $department)
                                         <option value="{{ $department->id }}">{{ $department->name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="exampleFormControlInput1" class="form-label">Roles</label>
+                                <select class="form-select" aria-label="Default select example" name="role">
+                                    <option selected disabled>Select Roles</option>
+                                    @foreach ($roles as $role)
+                                        <option value="{{ $role->name }}">{{ $role->name }}</option>
                                     @endforeach
                                 </select>
                             </div>

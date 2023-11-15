@@ -12,6 +12,8 @@
     <!--Fontawsome-->
     <link rel="stylesheet" href="{{ asset('font-awesome/css/font-awesome.min.css') }}">
 
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
     <title>Ternet Service Portal</title>
 </head>
 

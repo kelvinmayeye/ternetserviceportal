@@ -7,6 +7,8 @@
                     <h2>Statuses</h2>
                     <a href="{{ route('roles.create') }}" class="btn btn-primary">Add Role</a>
 
+                    <a href="{{ route('roles.permission') }}" class="btn btn-primary mx-5">+ Role in Permission</a>
+
                     <a href="{{ route('permissions.index') }}" class="btn btn-primary mx-5">Permission</a>
                 </div>
                 <div class="card-body">
@@ -23,7 +25,11 @@
                             @foreach ($roles as $role)
                                 <tr>
                                     <td>{{ $role->name }}</td>
-                                    <td> </td>
+                                    <td>
+                                        @foreach ($role->permissions as $permission)
+                                        <span class="badge rounded-pill bg-info text-dark">{{ $permission->name }}</span> &nbsp;
+                                        @endforeach
+                                    </td>
                                     <td>
                                         <div class="btn-group">
                                             <button type="button" class="btn btn-danger dropdown-toggle"

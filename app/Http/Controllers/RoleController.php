@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Spatie\Permission\Models\Role;
 use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\Session;
+use Spatie\Permission\Models\Permission;
 
 class RoleController extends Controller {
     /**
@@ -101,6 +103,45 @@ class RoleController extends Controller {
             Session::flash('error', 'This Role cant be deleted');
             return back();
         }
+        return back();
+    }
+
+    public function getRolePermission(){
+        $roles = Role::all();
+        $permissions = Permission::all();
+
+        return view('backend.rolespermission.index',compact('roles','permissions'));
+    }
+
+    public function storeRolePermission(Request $request){
+        $data = array();
+        $permissions = $request->permission;
+         
+        foreach ($permissions as $key => $item) {
+            $data['role_id'] = $request->role;
+            $data['permission_id'] = $item;
+        
+            // Check if the role already has the permission
+            $existingRecord = DB::table('role_has_permissions')
+                ->where('role_id', $data['role_id'])
+                ->where('permission_id', $data['permission_id'])
+                ->first();
+        
+            if (!$existingRecord) {
+                try {
+                    // Insert the record only if it doesn't exist
+                    DB::table('role_has_permissions')->insert($data);
+                    Session::flash('success', 'Permission added successfully');
+                } catch (QueryException $exception) {
+                    Session::flash('error', 'Failed to add permission');
+                    return back();
+                }
+            } else {
+                // If the record already exists, you can skip the insertion
+                Session::flash('info', 'Permission already assigned to the role');
+            }
+        }
+
         return back();
     }
 }

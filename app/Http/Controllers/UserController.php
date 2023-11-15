@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Department;
+use Illuminate\Http\Request;
+use Spatie\Permission\Models\Role;
 use Illuminate\Support\Facades\Session;
 
 class UserController extends Controller
@@ -16,7 +17,8 @@ class UserController extends Controller
 
     public function create(){
         $departments=Department::all();
-        return view('backend.users.create',compact('departments'));
+        $roles=Role::all();
+        return view('backend.users.create',compact('departments','roles'));
     }
 
     public function show($id){
@@ -52,6 +54,8 @@ class UserController extends Controller
         $user->password=bcrypt("password");
         $user->department_id=$request->department_id;
         $user->save();
+
+        $user->assignRole($request->role);
         
         Session::flash("success","Successfully Saved");
         return redirect("users");

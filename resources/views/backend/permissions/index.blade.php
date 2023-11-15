@@ -12,7 +12,6 @@
                         <thead>
                             <tr>
                                 <th>Permission</th>
-                                <th>Roles</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -21,7 +20,6 @@
                             @foreach ($permissions as $permission)
                                 <tr>
                                     <td>{{ $permission->name }}</td>
-                                    <td> </td>
                                     <td>
                                         <div class="btn-group">
                                             <button type="button" class="btn btn-danger dropdown-toggle"

@@ -55,20 +55,20 @@ Route::get('send-mail', function () {
 Route::get('send',[NotificationController::class,'sendNotification']);
 
 
-Route::middleware(['role:user',])->group(function () {
-    
-});
 
 
-//cant access this links without login
-Route::middleware('auth','role:admin')->group(function(){
+Route::middleware('auth')->group(function(){
 Route::get('services',[ServiceController::class,'index']);
 Route::get('servicesshow/{id}/show',[ServiceController::class,'show'])->name("service.show");
+});
+
+Route::middleware('auth','role:admin')->group(function(){
 Route::get('servicescreate',[ServiceController::class,'create']);
 Route::post('services',[ServiceController::class,'store'])->name("services.store");
 Route::get('services/{id}/edit',[ServiceController::class,'edit']);
 Route::put('services/update/{id}',[ServiceController::class,'update'])->name("services.update");
 Route::get('services/{id}/delete',[ServiceController::class,'destroy']);
+
 
 Route::get('departments',[DepartmentController::class,'index']);
 Route::post('departments',[DepartmentController::class,'store']);
@@ -99,7 +99,6 @@ Route::get('delete/{id}',[ContactController::class,'deletecontact']);
 
 Route::get('subscribers',[SubscriberController::class,'index']);
 Route::get('subdelete/{id}',[SubscriberController::class,'deletecontact']);
-
 
 Route::post('logout',[FrontEndController::class,'logout'])->name('logout');
 });
